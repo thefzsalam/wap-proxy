@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }} - WOTD:{{ date }}</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <p>{{ pronounce }} | {{ type }}</p>
+        
+        <u>Definition:</u><br>
+        <p>{{ definition|striptags }}</p>
+        
+        <u>Examples:</u><br>
+        <p>{{ examples|striptags }}</p>
+
+        <u>Do You Know:</u><br>
+        <p>{{ doYouKnow|striptags }}</p>
+    </body>
+</html>
