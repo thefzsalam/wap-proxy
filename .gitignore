@@ -1,1 +1,3 @@
 venv
+imagify_cache
+__pycache__
