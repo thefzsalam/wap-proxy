@@ -46,11 +46,6 @@ def imagify():
     title = request.args.get('title')
 
     imagify = Imagify(IMAGIFY_ROOT_PATH)
-    print('DEBUG')
-    print(repr(title))
-    print(repr(imagify.get_lasturl()))
-    print(repr(url))
-    print('END DEBUG')
     if not title or imagify.get_lasturl() != url:
         title = imagify.imagify(url)
 
