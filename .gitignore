@@ -1,3 +1,5 @@
 venv
 imagify_cache
 __pycache__
+ghostdriver.log
+
