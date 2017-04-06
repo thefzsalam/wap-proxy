@@ -6,7 +6,7 @@ from Imagify import Imagify
 
 
 from flask import Blueprint, render_template,\
-                  request,\
+                  request,redirect,\
                   send_from_directory
 
 imagify_blueprint = Blueprint('imagify_blueprint',__name__)
