@@ -15,10 +15,11 @@ def traintime(station):
         trains,timestamp = TrainTime.getTrainsBwStations(station)
         if trains is None:
             return traintime_blueprint.send_static_file('traintime_error.html')
-        return render_template('traintime_bw_stations.html',trains = trains,timestamp = timestamp)
+        return render_template('traintime_bw_stations.html',
+                               station = station, trains = trains,timestamp = timestamp)
     else:
         trains,timestamp = TrainTime.getTrainsFromStation(station)
         if trains is None:
             return traintime_blueprint.send_static_file('traintime_error.html')
         return render_template('traintime_from_station.html',
-                           trains = trains, timestamp = timestamp)
+                       trains = trains,station = station, timestamp = timestamp)
