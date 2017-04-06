@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {% block title %}{{ title }}{% endblock %}</title>
+    </head>
+    <body>
+        <img src="{{ imgurl|safe }}">
+        <br>
+        {% if appurl_imagify_next %}
+        <a href="{{ appurl_imagify_next|safe }}">Next</a>
+        {% endif %}
+        {% if appurl_imagify_prev %}
+        <a href="{{ appurl_imagify_prev|safe }}">Prev</a>
+        {% endif %}
+        <br>
+        <a href="{{ appurl_links|safe }}">Links</a>
+        <a href="/">Home</a>
+        <br>
+</html>
