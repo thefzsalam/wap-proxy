@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>{{ query }} |{% if no_optimize %} NO_OPT |{% endif %} Google Search</title>
+    </head>
+    <body>
+        <h4>{{ query }} |{% if no_optimize %} NO_OPT |{% endif %} Google Search</h4>
+        {% for url in urls %}
+        <a href="{{ url }}">{{ url }}</a>
+        <br>
+        {% endfor %}
+    </body>
+</html>
