@@ -1,0 +1,16 @@
+<html>
+    <head><title>Trains from {{ station }} - {{ timestamp }}</title></head>
+    <body>
+        <h1>Trains from {{ station }} - {{ timestamp }}</h1>
+        {% for train in trains %}
+        <br>
+        <b><u>{{ train['train_num'] }}
+                {{ train['train_name'] }} | {{ train['type'] }} | {{ train['run_days'] }}</u></b>
+        <span>Arr: {{ train['arr'] }} |
+              Dep: {{ train['dep'] }} | 
+              Duration: {{ train['duration'] }}
+        </span>
+        <br>
+        {% endfor %}
+    </body>
+</html>

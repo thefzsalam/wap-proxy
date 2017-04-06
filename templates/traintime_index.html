@@ -1,0 +1,11 @@
+<html>
+    <head><title>Train Time - List of available stations</title></head>
+    <body>
+        <h1>Train Time - List of available stations</h1>
+        <br>
+        {% for station in stations %}
+        <a href="{{ station }}">{{ station }}</a>
+        <br>
+        {% endfor %}
+    </body>
+</html>

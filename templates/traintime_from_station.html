@@ -1,0 +1,26 @@
+<html>
+    <head><title>Trains from {{ station }} - {{ timestamp }}</title></head>
+    <body>
+        <h1>Trains from {{ station }} - {{ timestamp }}</h1>
+        <br>
+        {% for train in trains %}
+        <b><u>{{ train['train_num'] }} 
+              {{ train['train_name'] }} |
+              {{ train['route'] }} |
+              {{ train['going_to'] }}</u></b>
+        <br>
+        <small>via {{ train['route'] }}</small><br>
+        <span>Arr: {{ train['exp_arr'] }} |
+              Dep: {{ train['exp_dep'] }} | 
+              Delay: {{ train['del_arr'] }}
+        </span>
+        <span>Platform: {% if train['exp_pf'] %}
+                            {{ train['exp_pf'] }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+        </span>
+        <br><br>
+        {% endfor %}
+    </body>
+</html>
