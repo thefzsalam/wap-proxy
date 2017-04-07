@@ -1,4 +1,5 @@
-from flask import Blueprint,request,redirect,url_for
+from flask import Blueprint,request,redirect,url_for,render_template
+from URLOptimize import URLOptimize
 import google
 
 google_blueprint = Blueprint('google_blueprint',__name__)
@@ -10,18 +11,7 @@ def google_search():
     if not query:
         redirect(url_for('root'))
 
+    urls = google.search(query,stop=20)
+    urls_dict = URLOptimize.optimize_urls(urls)
 
-    urls = google.search(get_vars['q'][0],stop=20)
-    if not no_optimize:
-        urls_ = []
-        for url in urls
-            if url.startswith('https://'):
-                url = url.replace('https://','http://',1)
-            if url.startswith('http://en.wikipedia'):
-                url = url.replace('en.wiki','en.m.wiki',1)
-            # NOTE: Imagify URL
-            url = url_for('imagify',url=url)
-            urls_ += [url]
-        urls = urls_
-
-    return render_template('google_search.html',urls=urls,query=query,no_optimize=bool(no_optimize))
+    return render_template('google_search.html',urls_dict=urls_dict,query=query,no_optimize=bool(no_optimize))

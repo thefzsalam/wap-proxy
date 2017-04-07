@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>{{ query }} |{% if no_optimize %} NO_OPT |{% endif %} Google Search</title>
+        <title>Links at {{ main_url }}</title>
     </head>
     <body>
-        <h4>{{ query }} |{% if no_optimize %} NO_OPT |{% endif %} Google Search</h4>
+        <h4>Links at {{ main_url }}</h4>
         {% for title, url in urls_dict.items() %}
         <a href="{{ url }}">{{ title }}</a>
         <br>

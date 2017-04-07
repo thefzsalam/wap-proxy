@@ -81,7 +81,7 @@ def imagify():
                            imgurl = imgurl,
                            appurl_imagify_next = appurl_imagify_next,
                            appurl_imagify_prev = appurl_imagify_prev,
-                           appurl_imagify_links = appurl_imagify_links
+                           appurl_links = appurl_imagify_links
                           )
 
 @imagify_blueprint.route('/'+str(IMAGIFY_ROOT_PATH)+'/<path:path>')
