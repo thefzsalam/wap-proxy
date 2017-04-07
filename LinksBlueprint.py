@@ -13,7 +13,7 @@ def links():
         redirect(url_for('root'))
 
     html_page = requests.get(url).text
-    soup = BeautifulSoup(html_page)
+    soup = BeautifulSoup(html_page,'lxml')
     urls = []
     for link in soup.findAll('a'):
         # resolve relative
