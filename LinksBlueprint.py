@@ -20,6 +20,6 @@ def links():
         link_url = urljoin(url,link.get('href'))
         urls+=[link_url]
     urls_dict = URLOptimize.optimize_urls(urls)
-    return render_template('links.html',main_url = url,urls_dict = urls)
+    return render_template('links.html',main_url = url,urls_dict = urls_dict)
 
 
